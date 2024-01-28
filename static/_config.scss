@@ -1,0 +1,27 @@
+// Variables
+$webpage-width: 1vw;
+// $bg-color: #d6cec2;
+$bg-color: #f4f2ee;
+$icon-color: rgba(0,0,0,0.6);
+$Primary-color: #FFFFFF;
+$Secondary-color: #0A66C2;
+$Text-header: #0000E6;
+$Text-extra: #000099;
+$Search-color: #edf3f8;
+$Search-width: 13rem;
+// $Profile-pic: url('./img/profile_pic.jpg');
+
+// Set Text Color
+@function set-text-color($color) {
+  @if (lightness($color) > 50) {
+      @return #000;
+  }
+
+  @else {
+      @return #fff;
+  }
+}
+
+@function searchWidth($addWidth){
+  @return $Search-width + $addWidth
+}

@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@300;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+body {
+  background-color: #f4f2ee; }
+
+header {
+  background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 8.5vh;
+  width: 100vw;
+  padding: 0.5rem 4.8rem; }
+  header div#header-1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    header div#header-1 img {
+      height: 95%;
+      width: 2.15rem; }
+    header div#header-1 div#searchBar {
+      background-color: #edf3f8;
+      margin-left: 0.4rem;
+      padding: 0 1.0rem; }
+      header div#header-1 div#searchBar i {
+        padding: 0 0.3rem; }
+      header div#header-1 div#searchBar input {
+        height: 95%;
+        width: 13rem;
+        font-size: 0.9rem;
+        background-color: transparent;
+        border: none;
+        border-radius: 0.3rem;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out; }
+        header div#header-1 div#searchBar input:focus {
+          width: 16rem;
+          outline: none; }
+  header ul li {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 0 0.2rem; }
+    header ul li i {
+      font-size: 1.3rem; }
+    header ul li p {
+      font-size: 0.87em; }
+    header ul li:nth-of-type(6) img {
+      width: 1.2rem;
+      height: 100%;
+      border-radius: 20%; }
+    header ul li:nth-of-type(6) span {
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex; }
+
+/*# sourceMappingURL=base.css.map */

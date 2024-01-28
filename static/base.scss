@@ -1,0 +1,85 @@
+@import 'config';
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400&display=swap');
+
+// Genereal Styles
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $bg-color;
+}
+
+header {
+  background-color: $Primary-color;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 8.5vh;
+  width: 100vw;
+  padding: 0.5rem 4.8rem;
+
+  div#header-1 {
+    display: flex;
+
+    img {
+      height: 95%;
+      width: 2.15rem;
+    }
+    div#searchBar {
+      // display: flex;
+      background-color: $Search-color;
+      margin-left: 0.4rem;
+      padding: 0 1.0rem;
+      i {
+        padding: 0 0.3rem;
+      }
+      input {
+        height: 95%;
+        width: $Search-width;
+        font-size: 0.9rem;
+        background-color: transparent;
+        border: none;
+        border-radius: 0.3rem;
+        transition: all 0.2s ease-in-out;
+        &:focus {
+          width: searchWidth(3rem);
+          outline: none;
+        }
+      }
+    }
+  }
+
+  ul {
+    li {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 0.2rem;
+      i{
+        font-size: 1.3rem;
+      }
+      p{
+        font-size: 0.87em;
+      }
+      &:nth-of-type(6){
+        img{
+          width: 1.2rem;
+          height: 100%;
+          // border: 2px solid black;
+          border-radius: 20%;
+        }
+        span{
+          display: inline-flex;
+
+        }
+      }
+    }
+  }
+}
