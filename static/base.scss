@@ -7,10 +7,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  // border: solid 1px black;
 }
 
 body {
   background-color: $bg-color;
+  font-family: $Font;
 }
 
 header {
@@ -21,65 +23,243 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  height: 8.5vh;
+  height: fit-content;
   width: 100vw;
-  padding: 0.5rem 4.8rem;
+  padding: 0rem 4.8rem;
 
   div#header-1 {
+    align-self: center;
     display: flex;
 
     img {
       height: 95%;
       width: 2.15rem;
     }
+
     div#searchBar {
       // display: flex;
       background-color: $Search-color;
       margin-left: 0.4rem;
-      padding: 0 1.0rem;
+      padding: 0 1rem;
+      border: solid 2px transparent;
+      border-radius: 0.3rem;
+
       i {
-        padding: 0 0.3rem;
+        padding: 0 0rem;
       }
+
       input {
         height: 95%;
         width: $Search-width;
         font-size: 0.9rem;
         background-color: transparent;
         border: none;
-        border-radius: 0.3rem;
         transition: all 0.2s ease-in-out;
+
         &:focus {
-          width: searchWidth(3rem);
+          width: searchWidth(4rem);
           outline: none;
         }
       }
     }
   }
 
-  ul {
-    li {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 0 0.2rem;
-      i{
-        font-size: 1.3rem;
-      }
-      p{
-        font-size: 0.87em;
-      }
-      &:nth-of-type(6){
-        img{
-          width: 1.2rem;
-          height: 100%;
-          // border: 2px solid black;
-          border-radius: 20%;
-        }
-        span{
-          display: inline-flex;
+  nav {
+    min-width: 42rem;
+    ul {
+      display: flex;
 
+      li {
+        width: 5rem;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        color: $Nav-icon-color;
+        padding: 0.3rem 0.1rem;
+
+        & > span:first-of-type {
+          // border: solid 1px black;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 1.7rem;
+          height: 1.6rem;
+        }
+
+        i {
+          font-size: 1.3rem;
+        }
+
+        p {
+          font-size: 0.74rem;
+        }
+
+        &:hover {
+          color: $Nav-icon-color-hover;
+          cursor: pointer;
+        }
+
+        &.current {
+          color: $Nav-icon-color-hover;
+          border-bottom: solid 0.15rem $Nav-icon-color-hover;
+        }
+
+        &:nth-of-type(6) {
+          img {
+            width: 100%;
+            height: 100%;
+            // border: 2px solid black;
+            border-radius: 100%;
+          }
+        }
+
+        &:nth-of-type(7) {
+          width: 6rem;
+          border-left: solid 0.2px rgba($color: #000000, $alpha: 0.2);
+        }
+
+        &:nth-of-type(6) > span:last-of-type,
+        &:nth-of-type(7) > span:last-of-type {
+          display: inline-flex;
+          align-items: center;
+          i {
+            font-size: 0.87rem;
+            padding-left: 0.3rem;
+          }
+        }
+
+        &:last-of-type {
+          width: 7rem;
+          align-self: center;
+          font-size: 0.73rem;
+          text-align: center;
+          line-height: 1rem;
+          a {
+            text-decoration: none;
+            text-decoration-line: underline;
+            color: $Premium-color;
+          }
         }
       }
     }
+  }
+}
+
+main {
+  display: grid;
+  grid-gap: 1.3rem;
+  grid-template-areas: 'leftAside section rightAside';
+  grid-template-columns: minmax(0, 225px) minmax(0, auto) minmax(0, 300px);
+  width: 89vw;
+  margin: 4.5rem auto;
+  height: fit-content;
+
+  #left-aside {
+    background-color: $Primary-color;
+    border: solid 1px rgba($color: #000000, $alpha: 0.16);
+    border-radius: 0.6rem;
+    grid-area: leftAside;
+  }
+
+  section {
+    // background-color: $Primary-color;
+    border: none;
+    
+    // padding: 0.8rem 1.1rem;
+    grid-area: section;
+
+    div#userPost {
+      background-color: $Primary-color;
+      padding: 0.8rem 1.1rem 0.2rem;
+      border-radius: 0.6rem;
+      border: solid 1px rgba($color: #000000, $alpha: 0.16);
+      display: flex;
+      flex-direction: column;
+
+      & > div {
+        display: flex;
+      }
+
+      & > div:first-of-type {
+        img {
+          width: 3rem;
+          height: 3rem;
+          border-radius: 2rem;
+
+          &:hover{
+            cursor: pointer;
+          }
+        }
+
+        #postBtn {
+          width: 90%;
+          border-radius: 2rem;
+          border: solid 1px rgba($color: #000000, $alpha: 0.3);
+          color: rgba($color: #000000, $alpha: 0.62);
+          text-align: left;
+          margin-left: 0.5rem;
+          padding: 0.7rem 1rem;
+          transition: all 0.12s ease-in-out;
+
+          &:hover{
+            background-color: rgba($color: #777777, $alpha: 0.19);
+            cursor: pointer;
+          }
+        }
+      }
+
+      & > div:last-of-type {
+        width: 89%;
+        // border: solid black 2px;
+        margin: 0.3rem auto 0;
+        justify-content: space-between;
+
+        a{
+          display: flex;
+          text-decoration: none;
+          align-items: center;
+          justify-content: space-evenly;
+          padding: 0.9rem 0.4rem;
+          border-radius: 0.3rem;
+          transition: all 0.12s ease-in-out;
+
+          &:hover{
+            background-color: rgba($color: #777777, $alpha: 0.19);
+          }
+          
+          i{
+            font-size: 1.18rem;
+            
+          }
+          
+          &:nth-of-type(1) i{
+            color: $Secondary-color;
+          }
+          
+          &:nth-of-type(2) i{
+            color: goldenrod;
+          }
+
+          &:nth-of-type(3) i{
+            color: orangered;
+          }
+
+          p{
+            font-size: 0.87rem;
+            font-weight: 500;
+            margin-left: 0.6rem;
+            color: $Nav-icon-color;
+          }
+        }
+
+      }
+    }
+  }
+
+  #right-aside {
+    background-color: $Primary-color;
+    border: solid 1px rgba($color: #000000, $alpha: 0.16);
+    border-radius: 0.6rem;
+    grid-area: rightAside;
   }
 }

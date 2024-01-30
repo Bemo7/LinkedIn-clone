@@ -1,73 +1,147 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A linkedin clone site. For testing">
-  <script src="https://kit.fontawesome.com/265dd0d90c.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="{% static '/css/base.css' %}">
-  <script src="https://kit.fontawesome.com/265dd0d90c.js" crossorigin="anonymous" async></script>
-  <title>{% block title %}{% endblock title %}</title>
-  {% block cssImports %}{% endblock cssImports %}
-  {% block scriptImports %}{% endblock scriptImports %}
-</head>
-<body>
-  <template>
-    <div class="preloader">
-      <div id="preloader-title">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A linkedin clone site. For testing" />
+    <script
+      src="https://kit.fontawesome.com/265dd0d90c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="{% static '/css/base.css' %}" />
+    <script
+      src="https://kit.fontawesome.com/265dd0d90c.js"
+      crossorigin="anonymous"
+      async
+    ></script>
+    <title>{% block title %}{% endblock title %}</title>
+    {% block cssImports %}{% endblock cssImports %} {% block scriptImports %}{%endblock scriptImports %}
+  </head>
+  <body>
+    <template>
+      <div class="preloader">
+        <div id="preloader-title"></div>
+        <div id="preloader-animation"></div>
       </div>
-      <div id="preloader-animation"></div>
-    </div>
-  </template>
-  <header>
-    <div id="header-1">
-      <img src="../static/img/linkedin.png" alt="" id="logo">
-      <div id="searchBar">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="search" name="navSearch" id="navSearch" placeholder="Search">
+    </template>
+    <header>
+      <div id="header-1">
+        <img src="../static/img/linkedin.png" alt="" id="logo" />
+        <div id="searchBar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            type="search"
+            name="navSearch"
+            id="navSearch"
+            placeholder="Search"
+          />
+        </div>
       </div>
-    </div>
-    <nav>
-      <ul>
-        <li>
-          <i class="fa-solid fa-house"></i>
-          <p>Home</p>
-        </li>
-        <li>
-          <i class="fa-solid fa-people-group"></i>
-          <p>My Network</p>
-        </li>
-        <li>
-          <i class="fa-solid fa-briefcase"></i>
-          <p>Jobs</p>
-        </li>
-        <li>
-          <i class="fa-solid fa-comment-dots"></i>
-          <p>Messaging</p>
-        </li>
-        <li>
-          <i class="fa-solid fa-bell"></i>
-          <p>Notifications</p>
-        </li>
-        <li>
-          <img src="'./img/profile_pic.jpg'" alt="">
-          <span>
-            <p>Me</p>
-            <i class="fa-solid fa-caret-down"></i>
-          </span>
-        </li>
-        <li>
-          <i class="fa-solid fa-table-cells"></i>
-          <p>For Business</p>
-        </li>
-        <li>
-          <a href="">Don't miss: Premium for NGN0</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  {% block body %}{% endblock body %}
-  {% block scripts %}{% endblock scripts %}
-</body>
+      <nav>
+        <ul>
+          <li class="current">
+            <span>
+              <i class="fa-solid fa-house"></i>
+            </span>
+            <p>Home</p>
+          </li>
+          <li>
+            <span>
+              <i class="fa-solid fa-people-group"></i>
+            </span>
+            <p>My Network</p>
+          </li>
+          <li>
+            <span>
+              <i class="fa-solid fa-briefcase"></i>
+            </span>
+            <p>Jobs</p>
+          </li>
+          <li>
+            <span>
+              <i class="fa-solid fa-comment-dots"></i>
+            </span>
+            <p>Messaging</p>
+          </li>
+          <li>
+            <span>
+              <i class="fa-solid fa-bell"></i>
+            </span>
+            <p>Notifications</p>
+          </li>
+          <li>
+            <span>
+              <img src="../static/img/profile_pic.jpg" alt="" />
+            </span>
+            <span>
+              <p>Me</p>
+              <i class="fa-solid fa-caret-down"></i>
+            </span>
+          </li>
+          <li>
+            <span>
+              <i class="fa-solid fa-table-cells"></i>
+            </span>
+            <span>
+              <p>For Business</p>
+              <i class="fa-solid fa-caret-down"></i>
+            </span>
+          </li>
+          <li>
+            <a href="">Try Premium for<br />NGN0</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <aside id="left-aside"></aside>
+      <section>
+        <div id="userPost">
+          <div>
+            <img
+              src="../static/img/profile_pic.jpg"
+              alt="user profile picture"
+            />
+            <div id="postBtn">Start a post</div>
+          </div>
+          <div>
+            <a href="">
+              <i class="fa-regular fa-image"></i>
+              <p>Media</p>
+            </a>
+            <a href="">
+              <i class="fa-solid fa-calendar-days"></i>
+              <p>Event</p>
+            </a>
+            <a href="">
+              <i class="fa-regular fa-newspaper"></i>
+              <p>Write article</p>
+            </a>
+          </div>
+        </div>
+        <div id="sort">
+          <hr>
+          <p>
+            Sort by:
+            <select name="" id="">
+              <option value=""></option>
+            </select>
+          </p>
+        </div>
+
+        <div class="posts">
+          <div id="user">
+            <img src="" alt="">
+            <div id="userDetails">
+              
+            </div>
+          </div>
+        </div>
+      </section>
+      <aside id="right-aside"></aside>
+    </main>
+    <div id="chatBox"></div>
+    {% block body %}{% endblock body %} {% block scripts %}{% endblock scripts%}
+  </body>
 </html>
